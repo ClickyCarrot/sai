@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AI Chat</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="light">
+		<!-- AUTH SCREEN -->
+		<div id="auth-screen" class="auth-screen">
+			<div class="auth-box">
+				<h1>SAI</h1>
+				<p>Sign in to continue</p>
+				<input type="email" id="auth-email" placeholder="Email" />
+				<input type="password" id="auth-password" placeholder="Password" />
+				<button id="login-btn">Login</button>
+				<button id="register-btn">Register</button>
+				<p id="auth-error" class="auth-error"></p>
+			</div>
+		</div>
+
+		<!-- MAIN APP -->
+		<div id="app" class="app hidden">
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<div class="sidebar-top">
+					<button id="new-chat-btn">+ New Chat</button>
+				</div>
+				<div id="chat-list" class="chat-list"></div>
+				<div class="sidebar-bottom">
+					<button id="theme-toggle">🌙 Dark Mode</button>
+					<button id="logout-btn">Logout</button>
+				</div>
+			</div>
+
+			<!-- Main -->
+			<div class="main">
+				<div class="main-header">
+					<span id="chat-title">New Chat</span>
+				</div>
+				<div id="messages" class="messages"></div>
+				<div class="input-area">
+					<textarea id="user-input" placeholder="Message AI..." rows="1"></textarea>
+					<button id="send-btn">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path d="M2 21l21-9L2 3v7l15 2-15 2v7z" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- RENAME MODAL -->
+		<div id="rename-modal" class="modal hidden">
+			<div class="modal-box">
+				<h3>Rename Chat</h3>
+				<input type="text" id="rename-input" placeholder="New name..." />
+				<div class="modal-btns">
+					<button id="rename-confirm">Rename</button>
+					<button id="rename-cancel">Cancel</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- DELETE MODAL -->
+		<div id="delete-modal" class="modal hidden">
+			<div class="modal-box">
+				<h3>Delete Chat?</h3>
+				<p>This cannot be undone.</p>
+				<div class="modal-btns">
+					<button id="delete-confirm">Delete</button>
+					<button id="delete-cancel">Cancel</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Markup Formatting -->
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+		<!-- Firebase SDKs -->
+		<script type="module" src="script.js"></script>
+	</body>
+</html>
