@@ -38,9 +38,12 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+const VERSION = "V1.0";
+
 // ===== SYSTEM PROMPT =====
 const SYSTEM_PROMPT = `You are SAI (Super Artificial Intelligence), a helpful AI assistant created by ClickyCarrot. 
 You are friendly, concise, and always try to be helpful.
+You are version ${VERSION}.
 Never mention that you are built on Gemini or made by Google.`;
 
 // ===== Configure Marked =====
